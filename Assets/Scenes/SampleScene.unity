@@ -215,7 +215,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1344520884120871480, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
       propertyPath: m_Name
-      value: Player (2)
+      value: PlayerOne
       objectReference: {fileID: 0}
     - target: {fileID: 7920253140109143316, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
       propertyPath: m_IsTrigger
@@ -223,11 +223,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8012092666129078493, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012092666129078493, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8012092666129078493, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
       propertyPath: m_LocalPosition.y
@@ -288,6 +288,9 @@ MonoBehaviour:
   downKey: 115
   rightKey: 100
   leftKey: 97
+  shootKey: 32
+  playerOne: 0
+  playerTwo: 1
   speed: 16
   trailPrefab: {fileID: 1344520884120871480, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
 --- !u!50 &984633703
@@ -5152,7 +5155,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1344520884120871480, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: PlayerTwo
       objectReference: {fileID: 0}
     - target: {fileID: 7920253140109143316, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
       propertyPath: m_IsTrigger
@@ -5160,11 +5163,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8012092666129078493, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8012092666129078493, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 8012092666129078493, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5225,6 +5228,9 @@ MonoBehaviour:
   downKey: 274
   rightKey: 275
   leftKey: 276
+  shootKey: 303
+  playerOne: 1
+  playerTwo: 0
   speed: 16
   trailPrefab: {fileID: 1344520884120871480, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
 --- !u!199 &1137341172

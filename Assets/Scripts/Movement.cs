@@ -8,10 +8,15 @@ public class Movement : MonoBehaviour
     public KeyCode downKey;
     public KeyCode rightKey;
     public KeyCode leftKey;
+    public KeyCode shootKey;
+    public bool playerOne;
+    public bool playerTwo;
 
     public float speed = 16;
 
     public GameObject trailPrefab;
+
+    private bool shootAvailable = true;
 
     Collider2D trail;
 
@@ -21,6 +26,14 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
+        if (playerOne)
+        {
+            trailPrefab.GetComponent<SpriteRenderer>().color = Color.cyan;
+        }else if (playerTwo)
+        {
+            trailPrefab.GetComponent<SpriteRenderer>().color = Color.magenta;
+        }
+
         GetComponent<Rigidbody2D>().velocity = Vector2.up * speed;
         spawnTrail();
     }
@@ -28,6 +41,13 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(shootKey) && shootAvailable == true)
+        {
+            shootAvailable = false;
+            Debug.Log("Acaba de disparar.");
+            StartCoroutine(Coroutine());
+
+        }
         
         if (Input.GetKeyDown(upKey) && GetComponent<Rigidbody2D>().velocity.y >=0 )
         {
@@ -86,9 +106,13 @@ public class Movement : MonoBehaviour
             GetComponent<Movement>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-            //Destroy(gameObject);
         }
     }
 
-
+    IEnumerator Coroutine()
+    {
+        yield return new WaitForSeconds(5);
+        shootAvailable = true;
+        Debug.Log("Acaba de recuperar el disparo.");
+    }
 }
