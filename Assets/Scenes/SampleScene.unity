@@ -217,6 +217,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerOne
       objectReference: {fileID: 0}
+    - target: {fileID: 1344520884120871480, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443469231321911654, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443469231321911654, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443469231321911654, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7920253140109143316, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -293,6 +309,7 @@ MonoBehaviour:
   playerTwo: 1
   speed: 16
   trailPrefab: {fileID: 1344520884120871480, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
+  bulletPrefab: {fileID: 223524698491367115, guid: b66e2a6e9c3f7eb499e2a5de5770c626, type: 3}
 --- !u!50 &984633703
 Rigidbody2D:
   serializedVersion: 4
@@ -5157,6 +5174,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerTwo
       objectReference: {fileID: 0}
+    - target: {fileID: 1344520884120871480, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443469231321911654, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443469231321911654, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443469231321911654, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7920253140109143316, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -5233,6 +5266,7 @@ MonoBehaviour:
   playerTwo: 0
   speed: 16
   trailPrefab: {fileID: 1344520884120871480, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
+  bulletPrefab: {fileID: 223524698491367115, guid: b66e2a6e9c3f7eb499e2a5de5770c626, type: 3}
 --- !u!199 &1137341172
 ParticleSystemRenderer:
   serializedVersion: 6
