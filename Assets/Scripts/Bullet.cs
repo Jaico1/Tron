@@ -18,14 +18,11 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D co)
     {
-        if (co.CompareTag("Player"))
+        if (co.CompareTag("wall"))
         {
-            
+            Destroy(gameObject);
         }
-        else
-        {
-            //Destroy(co.gameObject);
-        }
+
         
     }
 }

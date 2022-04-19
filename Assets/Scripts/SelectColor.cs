@@ -8,21 +8,26 @@ public class SelectColor : MonoBehaviour
     public Color color;
     public bool playerOne;
     public bool playerTwo;
+    public int livesOne = 3;
+    public int livesTwo = 3;
 
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPrefs.SetInt("livesOne", livesOne);
+        PlayerPrefs.SetInt("livesTwo", livesTwo);
+
         if (playerOne)
         {
-            PlayerPrefs.SetFloat("redOne", 0);
-            PlayerPrefs.SetFloat("greenOne", 255);
-            PlayerPrefs.SetFloat("blueOne", 255);
+            PlayerPrefs.SetFloat("redTwo", 0);
+            PlayerPrefs.SetFloat("greenTwo", 255);
+            PlayerPrefs.SetFloat("blueTwo", 255);
         } 
         else if (playerTwo)
         {
-            PlayerPrefs.SetFloat("redTwo", 255);
-            PlayerPrefs.SetFloat("greenTwo", 0);
-            PlayerPrefs.SetFloat("blueTwo", 255);
+            PlayerPrefs.SetFloat("redOne", 255);
+            PlayerPrefs.SetFloat("greenOne", 0);
+            PlayerPrefs.SetFloat("blueOne", 255);
         }
         col = GetComponent<BoxCollider2D>();
     }

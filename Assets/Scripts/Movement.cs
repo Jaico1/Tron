@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -25,6 +26,10 @@ public class Movement : MonoBehaviour
     //Verificacion de disponibilidad de disparo
     private bool shootAvailable = true;
 
+    //Integers para las vidas de cada jugador
+    private int livesOne;
+    private int livesTwo;
+
     //Colision del rastro del jugador
     Collider2D trail;
     BoxCollider2D bulletCol;
@@ -36,6 +41,10 @@ public class Movement : MonoBehaviour
     //Funcion Start donde definimos el color inicial y movimiento inicial de ambos jugadores
     void Start()
     {
+        livesOne = PlayerPrefs.GetInt("livesOne");
+        livesTwo = PlayerPrefs.GetInt("livesTwo");
+        UIManager.Instance.UpdateScores(PlayerPrefs.GetInt("livesOne"), PlayerPrefs.GetInt("livesTwo"));
+
         //Definicion de colores de rastro inicial
         if (playerOne)
         {
@@ -133,10 +142,43 @@ public class Movement : MonoBehaviour
     {
         if (co != trail && co!= bulletCol)
         {
-            GetComponent<ParticleSystem>().Play();
             GetComponent<Movement>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            if(livesOne > 1 && livesTwo > 1)
+            {
+                if (playerOne)
+                {
+                    PlayerPrefs.SetInt("livesOne", livesOne-1);
+                }
+                else if (playerTwo)
+                {
+                    PlayerPrefs.SetInt("livesTwo", livesTwo - 1);
+                }
+                UIManager.Instance.UpdateScores(PlayerPrefs.GetInt("livesOne"), PlayerPrefs.GetInt("livesTwo"));
+                StartCoroutine(CoroutineDeath());
+            }
+            else
+            {
+                if (playerOne)
+                {
+                    PlayerPrefs.SetInt("livesOne", livesOne - 1);
+                }
+                else if (playerTwo)
+                {
+                    PlayerPrefs.SetInt("livesTwo", livesTwo - 1);
+                }
+                UIManager.Instance.UpdateScores(PlayerPrefs.GetInt("livesOne"), PlayerPrefs.GetInt("livesTwo"));
+                if (playerOne)
+                {
+                    PlayerPrefs.SetInt("win", 1);
+                }else if (playerTwo)
+                {
+                    PlayerPrefs.SetInt("win", 0);
+                }
+                StartCoroutine(CoroutineLoss());
+            }
+            
         }
     }
 
@@ -145,5 +187,21 @@ public class Movement : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         shootAvailable = true;
+    }
+
+    IEnumerator CoroutineDeath()
+    {
+        GetComponent<ParticleSystem>().Play();
+        yield return new WaitForSeconds(1);
+        SceneManager.UnloadSceneAsync("SampleScene");
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    IEnumerator CoroutineLoss()
+    {
+        GetComponent<ParticleSystem>().Play();
+        yield return new WaitForSeconds(1);
+        SceneManager.UnloadSceneAsync("SampleScene");
+        SceneManager.LoadScene("VictoryScene");
     }
 }
