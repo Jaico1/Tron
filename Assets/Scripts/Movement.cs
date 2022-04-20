@@ -145,7 +145,7 @@ public class Movement : MonoBehaviour
             GetComponent<Movement>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-            if(livesOne > 1 && livesTwo > 1)
+            if(PlayerPrefs.GetInt("livesOne") > 1 && PlayerPrefs.GetInt("livesTwo") > 1)
             {
                 if (playerOne)
                 {
@@ -158,7 +158,39 @@ public class Movement : MonoBehaviour
                 UIManager.Instance.UpdateScores(PlayerPrefs.GetInt("livesOne"), PlayerPrefs.GetInt("livesTwo"));
                 StartCoroutine(CoroutineDeath());
             }
-            else
+            else if (PlayerPrefs.GetInt("livesOne") > 1 && PlayerPrefs.GetInt("livesTwo") == 1)
+            {
+                if (playerOne)
+                {
+                    PlayerPrefs.SetInt("livesOne", livesOne - 1);
+                    UIManager.Instance.UpdateScores(PlayerPrefs.GetInt("livesOne"), PlayerPrefs.GetInt("livesTwo"));
+                    StartCoroutine(CoroutineDeath());
+                }
+                else if (playerTwo)
+                {
+                    PlayerPrefs.SetInt("livesTwo", livesTwo - 1);
+                    UIManager.Instance.UpdateScores(PlayerPrefs.GetInt("livesOne"), PlayerPrefs.GetInt("livesTwo"));
+                    PlayerPrefs.SetInt("win", 0);
+                    StartCoroutine(CoroutineLoss());
+                }
+            }
+            else if (PlayerPrefs.GetInt("livesOne") == 1 && PlayerPrefs.GetInt("livesTwo") > 1)
+            {
+                if (playerOne)
+                {
+                    PlayerPrefs.SetInt("livesOne", livesOne - 1);
+                    UIManager.Instance.UpdateScores(PlayerPrefs.GetInt("livesOne"), PlayerPrefs.GetInt("livesTwo"));
+                    PlayerPrefs.SetInt("win", 1);
+                    StartCoroutine(CoroutineLoss());
+                }
+                else if (playerTwo)
+                {
+                    PlayerPrefs.SetInt("livesTwo", livesTwo - 1);
+                    UIManager.Instance.UpdateScores(PlayerPrefs.GetInt("livesOne"), PlayerPrefs.GetInt("livesTwo"));
+                    StartCoroutine(CoroutineDeath());
+                }
+            }
+            else if(PlayerPrefs.GetInt("livesOne") == 1 && PlayerPrefs.GetInt("livesTwo") == 1)
             {
                 if (playerOne)
                 {
@@ -170,15 +202,16 @@ public class Movement : MonoBehaviour
                 }
                 UIManager.Instance.UpdateScores(PlayerPrefs.GetInt("livesOne"), PlayerPrefs.GetInt("livesTwo"));
                 if (playerOne)
-                {
-                    PlayerPrefs.SetInt("win", 1);
-                }else if (playerTwo)
-                {
-                    PlayerPrefs.SetInt("win", 0);
-                }
-                StartCoroutine(CoroutineLoss());
+               {
+                   PlayerPrefs.SetInt("win", 1);
+               }else if (playerTwo)
+               {
+                   PlayerPrefs.SetInt("win", 0);
+               }
+               StartCoroutine(CoroutineLoss());
             }
-            
+
+
         }
     }
 
