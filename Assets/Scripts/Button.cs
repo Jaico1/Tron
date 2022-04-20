@@ -8,6 +8,7 @@ public class Button : MonoBehaviour
     public string nextScene;
     void Start()
     {
+        PlayerPrefs.SetInt("MapID", 1);
         
     }
 
@@ -24,6 +25,7 @@ public class Button : MonoBehaviour
 
     private void OnMouseDown()
     {
+        
         ChangeScene();
     }
 }

@@ -9,14 +9,15 @@ public class SelectMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerPrefs.SetInt("MapID", 1);
+
     }
 
     
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(PlayerPrefs.GetInt("MapID"));
     }
     private void OnMouseDown()
     {
