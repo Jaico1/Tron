@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SelectMap : MonoBehaviour
 {
-
+    public int mapid;
     
     // Start is called before the first frame update
     void Start()
@@ -18,8 +18,8 @@ public class SelectMap : MonoBehaviour
     {
         
     }
-    public void setMap(float mapid)
+    private void OnMouseDown()
     {
-        PlayerPrefs.SetInt("MapID", (int)mapid);
+        PlayerPrefs.SetInt("MapID", mapid);
     }
 }

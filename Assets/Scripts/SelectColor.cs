@@ -19,15 +19,15 @@ public class SelectColor : MonoBehaviour
 
         if (playerOne)
         {
-            PlayerPrefs.SetFloat("redTwo", 0);
-            PlayerPrefs.SetFloat("greenTwo", 255);
-            PlayerPrefs.SetFloat("blueTwo", 255);
-        } 
-        else if (playerTwo)
-        {
             PlayerPrefs.SetFloat("redOne", 255);
             PlayerPrefs.SetFloat("greenOne", 0);
             PlayerPrefs.SetFloat("blueOne", 255);
+        } 
+        else if (playerTwo)
+        {PlayerPrefs.SetFloat("redTwo", 0);
+            PlayerPrefs.SetFloat("greenTwo", 255);
+            PlayerPrefs.SetFloat("blueTwo", 255);
+            
         }
         col = GetComponent<BoxCollider2D>();
     }
@@ -42,15 +42,15 @@ public class SelectColor : MonoBehaviour
     {
         if (playerOne)
         {
-            PlayerPrefs.SetFloat("redOne", color.r);
-            PlayerPrefs.SetFloat("greenOne", color.g);
-            PlayerPrefs.SetFloat("blueOne", color.b);
-        }
-        else if (playerTwo)
-        {
             PlayerPrefs.SetFloat("redTwo", color.r);
             PlayerPrefs.SetFloat("greenTwo", color.g);
             PlayerPrefs.SetFloat("blueTwo", color.b);
+        }
+        else if (playerTwo)
+        {PlayerPrefs.SetFloat("redOne", color.r);
+            PlayerPrefs.SetFloat("greenOne", color.g);
+            PlayerPrefs.SetFloat("blueOne", color.b);
+            
         }
     }
 }

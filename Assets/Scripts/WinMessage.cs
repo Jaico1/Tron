@@ -12,10 +12,10 @@ public class WinMessage : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("win") == 0)
         {
-            winMessage.text = "PLAYER 2 WINS!";
+            winMessage.text = "PLAYER 1 WINS!";
         }else if (PlayerPrefs.GetInt("win") == 1)
         {
-            winMessage.text = "PLAYER 1 WINS!";
+            winMessage.text = "PLAYER 2 WINS!";
         }
     }
 

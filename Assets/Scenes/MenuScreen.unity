@@ -353,7 +353,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: START
+  m_text: SELECT ARENA
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8e270e3e9ac178f4592775b57c0c4455, type: 2}
   m_sharedMaterial: {fileID: -8409337772788849253, guid: 8e270e3e9ac178f4592775b57c0c4455, type: 2}
@@ -468,8 +468,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -400}
-  m_SizeDelta: {x: 79.6, y: 30}
+  m_AnchoredPosition: {x: -5, y: -419}
+  m_SizeDelta: {x: 99.05, y: 32.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &470298714
 MonoBehaviour:
@@ -565,7 +565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b13e652e6a2b7db428020b26cfac9a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: SampleScene
+  nextScene: MapSelect
 --- !u!61 &470298718
 BoxCollider2D:
   m_ObjectHideFlags: 0

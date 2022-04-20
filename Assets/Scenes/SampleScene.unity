@@ -937,7 +937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8012092666129078493, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 8012092666129078493, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1227,11 +1227,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b878a398d24174f920261da70a0bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upKey: 119
-  downKey: 115
-  rightKey: 100
-  leftKey: 97
-  shootKey: 32
+  upKey: 273
+  downKey: 274
+  rightKey: 275
+  leftKey: 276
+  shootKey: 303
   playerOne: 0
   playerTwo: 1
   speed: 16
@@ -6120,7 +6120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &988969454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6188,7 +6188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8012092666129078493, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8012092666129078493, guid: a54d39c777c67a443897fd75cc633a14, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6311,11 +6311,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b878a398d24174f920261da70a0bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upKey: 273
-  downKey: 274
-  rightKey: 275
-  leftKey: 276
-  shootKey: 303
+  upKey: 119
+  downKey: 115
+  rightKey: 100
+  leftKey: 97
+  shootKey: 32
   playerOne: 1
   playerTwo: 0
   speed: 16
