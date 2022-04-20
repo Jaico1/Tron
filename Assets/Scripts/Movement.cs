@@ -195,7 +195,7 @@ public class Movement : MonoBehaviour
             player = 0;
         }
         UIManager.Instance.UpdateShoot(true, player);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         UIManager.Instance.UpdateShoot(false, player);
         shootAvailable = true;
     }
