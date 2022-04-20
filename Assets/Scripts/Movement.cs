@@ -185,7 +185,18 @@ public class Movement : MonoBehaviour
     //Subrutina para esperar varios segundos
     IEnumerator Coroutine()
     {
+        int player;
+        if (playerOne)
+        {
+            player = 1;
+        }
+        else
+        {
+            player = 0;
+        }
+        UIManager.Instance.UpdateShoot(true, player);
         yield return new WaitForSeconds(5);
+        UIManager.Instance.UpdateShoot(false, player);
         shootAvailable = true;
     }
 
